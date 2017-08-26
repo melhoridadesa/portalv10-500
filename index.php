@@ -18,8 +18,15 @@
     </style>
 </head>
 <body>
+<?php
+//Functions
+require_once('library/arquivos.php');
+?>
 <!-- MENU -->
-<?php require_once('views/_includes/site/menu.php'); ?>
+<?php
+    obterArquivo('menu');
+    require_once('views/_includes/site/menu.php');
+?>
 
 <div class="container">
 
@@ -34,11 +41,24 @@
                 $corpoDefault = true;
                 require_once('views/_includes/site/corpo_default.php');
             ?>
+
         </div>
-
-        <!-- MENU -->
-    </div>
-
+            <!-- MENU -->
+            <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                    <a href="#" class="list-group-item">Link</a>
+                </div>
+            </div>
+        </div>
 </div>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
