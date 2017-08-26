@@ -24,24 +24,21 @@ require_once('library/arquivos.php');
 ?>
 <!-- MENU -->
 <?php
-    obterArquivo('menu');
-    require_once('views/_includes/site/menu.php');
+
+View('menu', [
+    ['id' => 1, 'titulo' => 'home', 'url' => 'seila.php'],
+    ['id' => 2, 'titulo' => 'link', 'url' => 'link.php']
+]);
+
 ?>
 
 <div class="container">
 
     <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-12 col-md-9">
-            <?php
-                $bannerAtivo = true;
-                require_once('views/_includes/site/topo_banner.php');
-            ?>
+            <?php View('topo_banner'); ?>
             <!-- CORPO DA PAGINA -->
-            <?php
-                $corpoDefault = true;
-                require_once('views/_includes/site/corpo_default.php');
-            ?>
-
+            <?php View('corpo_default'); ?>
         </div>
             <!-- MENU -->
             <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
