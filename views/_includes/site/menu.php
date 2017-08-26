@@ -7,7 +7,12 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <?php
-            foreach($dado as $menu):
+
+            use Library\Melhoridade\Controllers\Menu;
+
+            $arquivos = new Menu();
+
+            foreach($arquivos->getData() as $menu):
             ?>
                 <li class="nav-item active">
                     <a class="nav-link" href="<?= $menu['url'] ?>">

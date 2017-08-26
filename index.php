@@ -1,11 +1,11 @@
 <?php
 //Autoload
 require_once('vendor/autoload.php');
+
 use Library\Melhoridade\Arquivos;
+
 $arquivos = new Arquivos();
 
-print_r(get_class_methods($arquivos));
-die;
 ?>
 
 <!DOCTYPE html>
@@ -26,23 +26,23 @@ die;
             width: 100%;
         }
     </style>
-    <title> <?= $configApp->app; ?> </title>
+    <title> Teste </title>
 </head>
 <body>
 
 <?php
+//
+//$sql = 'select id, titulo, url from menu';
+//
+//foreach($dbh->query($sql) as $row) {
+//    $dados[] = [
+//        'id'     => $row['id'],
+//        'titulo' => $row['titulo'],
+//        'url'    => $row['url']
+//    ];
+//}
 
-$sql = 'select id, titulo, url from menu';
-
-foreach($dbh->query($sql) as $row) {
-    $dados[] = [
-        'id'     => $row['id'],
-        'titulo' => $row['titulo'],
-        'url'    => $row['url']
-    ];
-}
-
-View('menu', $dados);
+$arquivos->View('menu');
 
 ?>
 
@@ -50,9 +50,9 @@ View('menu', $dados);
 
     <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-12 col-md-9">
-            <?php View('topo_banner'); ?>
+            <?php $arquivos->View('topo_banner'); ?>
             <!-- CORPO DA PAGINA -->
-            <?php View('corpo_default'); ?>
+            <?php $arquivos->View('corpo_default'); ?>
         </div>
             <!-- MENU -->
             <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">

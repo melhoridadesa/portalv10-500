@@ -7,7 +7,7 @@ class Arquivos
 
     function caminhoDefault()
     {
-        return __DIR__ . "/../views/_includes/site/";
+        return __DIR__ . "/../../../views/_includes/site/";
     }
 
     function arquivoExiste(string $arquivo)
@@ -28,21 +28,21 @@ class Arquivos
                 break;
         }
 
-        return caminhoDefault() . "{$arquivo}.{$extensao}";
+        return $this->caminhoDefault() . "{$arquivo}.{$extensao}";
     }
 
     function validarArquivo(string $arquivo, bool $ativo = true)
     {
-        $arquivoComExtensao = arquivoComExtensao($arquivo);
+        $arquivoComExtensao = $this->arquivoComExtensao($arquivo);
 
-        return (arquivoExiste($arquivoComExtensao) && $ativo);
+        return ($this->arquivoExiste($arquivoComExtensao) && $ativo);
     }
 
     function View(string $arquivo, array $dados = [], bool $ativo = true)
     {
-        if (validarArquivo($arquivo, $ativo)) {
+        if ($this->validarArquivo($arquivo, $ativo)) {
             $dado = $dados;
-            require_once arquivoComExtensao($arquivo);
+            require_once $this->arquivoComExtensao($arquivo);
         }
     }
 }
