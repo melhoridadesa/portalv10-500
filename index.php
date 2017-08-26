@@ -27,10 +27,17 @@ require_once('config/autoload.php');
 
 <?php
 
-View('menu', [
-    ['id' => 1, 'titulo' => 'home', 'url' => 'seila.php'],
-    ['id' => 2, 'titulo' => 'link', 'url' => 'link.php']
-]);
+$sql = 'select id, titulo, url from menu';
+
+foreach($dbh->query($sql) as $row) {
+    $dados[] = [
+        'id'     => $row['id'],
+        'titulo' => $row['titulo'],
+        'url'    => $row['url']
+    ];
+}
+
+View('menu', $dados);
 
 ?>
 
