@@ -1,6 +1,11 @@
 <?php
 //Autoload
-require_once('config/autoload.php');
+require_once('vendor/autoload.php');
+use Library\Melhoridade\Arquivos;
+$arquivos = new Arquivos();
+
+print_r(get_class_methods($arquivos));
+die;
 ?>
 
 <!DOCTYPE html>
