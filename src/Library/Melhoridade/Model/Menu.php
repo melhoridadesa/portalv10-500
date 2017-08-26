@@ -14,7 +14,7 @@ class Menu implements MenuContract
     {
         return [
             ["id" => 1, "url" => "home.php", "titulo" => "home"],
-            ["id" => 2, "url" => "seila.php", "titulo" => "seila"],
+            ["id" => 2, "url" => "contrato.php", "titulo" => "contrato do aluno"],
         ];
     }
 }

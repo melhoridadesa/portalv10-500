@@ -14,5 +14,7 @@
           "Library\\Melhoridade\\": "src/Library/Melhoridade/"
       }
     },
-    "require": {}
+    "require": {
+        "mpdf/mpdf": "^6.1"
+    }
 }
