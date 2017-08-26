@@ -1,3 +1,8 @@
+<?php
+//Autoload
+require_once('config/autoload.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -16,13 +21,10 @@
             width: 100%;
         }
     </style>
+    <title> <?= $configApp->app; ?> </title>
 </head>
 <body>
-<?php
-//Functions
-require_once('library/arquivos.php');
-?>
-<!-- MENU -->
+
 <?php
 
 View('menu', [
